@@ -1,2 +1,0 @@
-
-include web-starter-selenium
