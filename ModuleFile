@@ -1,0 +1,8 @@
+name    'web-starter-selenium'
+version '0.0.1'
+source ''
+author 'John Brandenburg'
+license 'GPL v2'
+summary 'Puppet module to install selenium'
+description ''
+project_page ''

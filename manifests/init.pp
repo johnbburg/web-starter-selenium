@@ -17,7 +17,6 @@ class web-starter-selenium ($version = "2.45.0") {
     ensure => installed,
   }
 
-
   exec { "web-starter-selenium::download":
     command => "wget --directory-prefix=/tmp/vagrant-cache ${url}",
     path    => '/usr/bin',
