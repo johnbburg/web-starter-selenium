@@ -1,5 +1,5 @@
-class web-starter-selenium ($version = "2.45.0") {
 
+  $version = "2.45.0"
   $version_array = split($version, '[.]')
   $major_version = $version_array[0]
   $minor_version = $version_array[1]
@@ -7,7 +7,7 @@ class web-starter-selenium ($version = "2.45.0") {
   $url = "http://selenium-release.storage.googleapis.com/${major_version}.${minor_version}/selenium-server-standalone-${major_version}.${minor_version}.${release_version}.jar"
   $filename = 'selenium-$version'
 
-  package { "xvfb":
+  package { "xorg-x11-server-Xvfb":
     ensure => installed,
   }
   package { "firefox":
@@ -30,7 +30,5 @@ class web-starter-selenium ($version = "2.45.0") {
     command => "tar -zxvf /tmp/vagrant-cache/${filename}.tgz -C /opt",
     path    => ["/bin"],
     require => [Exec["web-starter-selenium::download"]],
-    creates => "/opt/selenium-server-standalone-${version}.jar", #this right?
+    creates => "/opt/selenium-server-standalone-${version}.jar",
   }
-
-}
