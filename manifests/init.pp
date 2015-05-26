@@ -17,14 +17,6 @@ class web-starter-selenium::selenium($version = "2.45.0"){
     ensure => installed,
   }
 
-  # These are also defined in another module used in web-starter. but need to be defined separately if we are to use
-  # this in isolation.
-  package { ["java-1.7.0-openjdk"]: ensure => installed, }
-
-  file { "/tmp/vagrant-cache":
-    ensure  => "directory"
-  }
-
   exec { "web-starter-selenium::download":
     command => "wget --directory-prefix=/tmp/vagrant-cache ${url}",
     path    => '/usr/bin',
