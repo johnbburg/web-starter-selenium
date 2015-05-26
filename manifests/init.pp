@@ -5,7 +5,7 @@ class web-starter-selenium::selenium($version = "2.45.0"){
   $minor_version = $version_array[1]
   $release_version = $version_array[2]
   $url = "http://selenium-release.storage.googleapis.com/${major_version}.${minor_version}/selenium-server-standalone-${major_version}.${minor_version}.${release_version}.jar"
-  $filename = "selenium-${version}"
+  $filename = "selenium-server-standalone-${version}"
 
   package { "xorg-x11-server-Xvfb":
     ensure => installed,
