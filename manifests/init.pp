@@ -1,5 +1,5 @@
+class web-starter-selenium::selenium($version = "2.45.0"){
 
-  $version = "2.45.0"
   $version_array = split($version, '[.]')
   $major_version = $version_array[0]
   $minor_version = $version_array[1]
@@ -40,3 +40,4 @@
     require => [Exec["web-starter-selenium::download"]],
     creates => "/opt/selenium-server-standalone-${version}.jar",
   }
+}
