@@ -17,6 +17,9 @@
     ensure => installed,
   }
 
+  # Redundant to the forumone::solr module.
+  package { ["java-1.7.0-openjdk"]: ensure => installed, }
+
   exec { "web-starter-selenium::download":
     command => "wget --directory-prefix=/tmp/vagrant-cache ${url}",
     path    => '/usr/bin',
