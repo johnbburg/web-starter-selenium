@@ -33,7 +33,7 @@
     timeout => 4800,
   }
 
-  # extract from the solr archive
+  # extract from the selenium archive
   exec { "web-starter-selenium::extract":
     command => "tar -zxvf /tmp/vagrant-cache/${filename}.tgz -C /opt",
     path    => ["/bin"],
